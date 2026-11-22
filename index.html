@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>bohel | Video koji donosi klijente</title>
+  <meta name="description" content="Smišljamo priču, montiramo i objavljujemo 8–12 videa mesečno na TikToku i Instagramu, uz lead sistem i sajt sa zakazivanjem. Video koji donosi klijente.">
+  <link rel="canonical" href="https://bohel.rs/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="bohel">
+  <meta property="og:locale" content="sr_RS">
+  <meta property="og:url" content="https://bohel.rs/">
+  <meta property="og:title" content="bohel | Video koji donosi klijente">
+  <meta property="og:description" content="Smišljamo priču, montiramo i objavljujemo 8–12 videa mesečno na TikToku i Instagramu, uz lead sistem i sajt sa zakazivanjem. Video koji donosi klijente.">
+  <meta property="og:image" content="https://bohel.rs/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bohel.rs/img/og.jpg">
+  <meta name="theme-color" content="#f4eee3">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=59">
+  <link rel="stylesheet" href="scene.css?v=51">
+</head>
+<body>
+  <a class="skip" href="#sadrzaj">Preskoči na sadržaj</a>
+
+  <header class="nav">
+    <a class="nav__logo" href="#top" aria-label="bohel, meni" aria-controls="mnav" aria-expanded="false">bohel<i></i><svg class="nav__chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <nav class="nav__links" aria-label="Glavna navigacija">
+      <a href="#content">Mesečni content</a>
+      <a href="#leadovi">Pregledi i leadovi</a>
+      <button type="button" class="nav__site" id="siteBtn" aria-expanded="false" aria-controls="sitePanel">Sajt <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></button>
+      <a href="#paketi">Paketi</a>
+      <a href="#onama">O nama</a>
+    </nav>
+    <div class="nav__end">
+      <a class="nav__ig" href="https://instagram.com/bohel.rs" target="_blank" rel="noopener" aria-label="bohel na Instagramu (@bohel.rs)" title="@bohel.rs"><img src="img/insta.webp?v=2" alt="" width="400" height="369" decoding="async"></a>
+      <a class="btn btn--sm nav__cta btn--sweep" href="#zakazi" data-book><span class="btn__label">Saradnja</span><span class="btn__box"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    </div>
+    <div class="mnav" id="mnav" hidden>
+      <nav class="mnav__in" aria-label="Meni">
+        <a href="#top">Početak</a>
+        <a href="#usluge" data-tab="0">Mesečni content</a>
+        <a href="#usluge" data-tab="1">Pregledi i leadovi</a>
+        <a href="#usluge" data-tab="2">Sajt sa zakazivanjem</a>
+        <a href="#paketi">Paketi</a>
+        <a href="#pitanja">Pitanja</a>
+        <a href="#onama">O nama</a>
+      </nav>
+      <div class="mnav__foot">
+        <a class="btn btn--sweep" href="#zakazi" data-book><span class="btn__label">Zakaži poziv</span><span class="btn__box"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="mnav__ig" href="https://instagram.com/bohel.rs" target="_blank" rel="noopener">Instagram ↗</a>
+      </div>
+    </div>
+    <div class="sitepanel" id="sitePanel" hidden>
+      <div class="sitepanel__in">
+        <article class="card card--site">
+          <div class="card__text">
+            <p class="card__tag">Sajt sa zakazivanjem</p>
+            <h3>Sajt koji puni kalendar</h3>
+            <p>Gledalac dođe sa videa, vidi ponudu i sam izabere termin. Bez dopisivanja.</p>
+            <p class="card__small">Izrada sajta je 800€ jednokratno, a uz saradnju na 6 meseci je uključena u paket.</p>
+          </div>
+          <div class="card__viz" aria-hidden="true">
+            <div class="viz" data-loop="8000">
+              <div class="screen">
+                <div class="bar"><b>Izaberi termin</b><span>Online</span></div>
+                <div class="pick">
+                  <div class="pick__days"><span><small>pon</small>12</span><span><small>uto</small>13</span><span data-at="1000"><small>sre</small>14</span><span><small>čet</small>15</span><span><small>pet</small>16</span></div>
+                  <div class="pick__times"><span>10:00</span><span data-at="2400">11:00</span><span>12:00</span><span>14:00</span><span>15:00</span><span>16:00</span></div>
+                  <div class="pick__go" data-at="3800" data-off="4100">Potvrdi termin</div>
+                  <div class="toast" data-at="4300" data-off="7500"><i>✓</i>Termin je zakazan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <div class="sitepanel__go">
+          <a class="btn btn--sm nav__cta btn--sweep" href="#zakazi" data-book><span class="btn__label">Zakaži poziv</span><span class="btn__box"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          <button type="button" class="sitepanel__close" id="siteClose">Zatvori</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="sadrzaj">
+    <section class="show" id="top">
+      <div class="show__intro" id="showIntro">
+        <h1 class="hero__h1">Ti vodiš biznis.<br><em class="mic-anchor">Mi pričamo</em><br class="br-m"> tvoju priču.<span class="mic" aria-hidden="true"><i class="mic__pole"></i><img src="img/mic.webp?v=2" alt="" width="760" height="564" decoding="async"></span></h1>
+        <p class="hero__sub">Smišljamo priču, montiramo i objavljujemo video koji ljudi gledaju do kraja, i koji ti donosi nove klijente. Gde god da si.</p>
+        <div class="hero__cta">
+          <a class="btn btn--sweep" href="#zakazi" data-book><span class="btn__label">Zakaži poziv</span><span class="btn__box"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          <a class="btn btn--ghost" href="#paketi">Pogledaj pakete</a>
+        </div>
+        <div class="chips-row"><a class="chip" href="#content"><span class="chip__txt">8–12 videa mesečno</span><svg class="chip__arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7.5 5H15v7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="chip" href="#usluge"><span class="chip__txt">TikTok i Instagram</span><svg class="chip__arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7.5 5H15v7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="chip" href="#leadovi"><span class="chip__txt">Lead sistem u svakom videu</span><svg class="chip__arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7.5 5H15v7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+
+      <div class="show__pin" id="showPin" aria-hidden="true">
+        <p class="show__word" id="showWord">bohel<i></i></p>
+        <div class="stage" id="showRig">
+          <div class="shot" id="shot">
+            <img class="shot__img" src="img/laptop.webp?v=2" alt="" width="1536" height="1024" decoding="async" fetchpriority="high">
+            <div class="shot__screen" id="shotScreen">
+              <div class="monitor__screen">
+                <div class="board">
+                  <aside class="board__side">
+                    <b class="board__logo">bohel<i></i></b>
+                    <span class="on">Ponuda</span><span>Content</span><span>Leadovi</span><span>Poruke</span><span>Termini</span>
+                  </aside>
+                  <div class="board__main">
+                    <div class="board__head"><b>Sve što dobijaš</b><span>Svakog meseca</span></div>
+                    <div class="tiles">
+                      <div class="tile tile--on"><i>Content</i><b>8–12 videa</b><span>Scenario i montaža</span></div>
+                      <div class="tile"><i>Leadovi</i><b>Lead sistem</b><span>Komentar, DM i link</span></div>
+                      <div class="tile"><i>Objava</i><b>TikTok i IG</b><span>Na vreme, svaki put</span></div>
+                      <div class="tile"><i>Termini</i><b>Tvoj sajt</b><span>Zakazivanje online</span></div>
+                    </div>
+                    <div class="board__low">
+                      <div class="panel-ui">
+                        <b>Rast profila</b>
+                        <svg class="growth" viewBox="0 0 480 170" preserveAspectRatio="none">
+                          <path class="g1" d="M0 42H480M0 85H480M0 128H480"/>
+                          <path class="g2" d="M0 148C70 143 110 131 170 120S280 92 340 62 430 22 480 10V170H0Z"/>
+                          <path class="g3" d="M0 148C70 143 110 131 170 120S280 92 340 62 430 22 480 10"/>
+                          <path class="g4" d="M0 164C90 161 150 154 220 142S340 118 480 76"/>
+                        </svg>
+                        <div class="legend"><span class="m">Pregledi</span><span class="o">Leadovi</span></div>
+                      </div>
+                      <div class="panel-ui">
+                        <b>Mi radimo</b>
+                        <ul class="ticks"><li>Ideja i scenario</li><li>Scenario za snimanje</li><li>Montaža</li><li>Objava</li><li>Vođenje profila</li></ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <i class="shot__notch"></i>
+            </div>
+          </div>
+          <div class="slate" id="slate">
+            <div class="slate__fly">
+              <img class="slate__img" src="img/clap.webp?v=1" alt="" width="1100" height="1009" decoding="async">
+            </div>
+          </div>
+          <div class="fly fly--icons" id="flyIcons">
+            <div class="icons__float"><img src="img/megaphone.webp?v=1" alt="" width="616" height="510" decoding="async"></div>
+          </div>
+          <div class="fly fly--light" id="flyLight">
+            <div class="light is-on" id="light">
+              <i class="light__glow"></i>
+              <img class="light__img" src="img/light.webp?v=3" alt="" width="640" height="891" decoding="async">
+              <i class="light__panel"></i>
+            </div>
+          </div>
+        </div>
+        <div class="note note--c" data-speed="540"><b>Novi lead</b><span>Zakazan poziv</span></div>
+        <i class="dot-zoom" id="dotZoom" aria-hidden="true"></i>
+        <div class="show__dim" id="showDim"></div>
+      </div>
+
+      <div class="show__gap" id="showGap"></div>
+
+      <div class="show__story" id="onama">
+        <h2>Objavljuješ, a niko se ne javlja?</h2>
+        <p>Snimaš kad stigneš. Montiraš noću. Objaviš i čekaš.</p>
+        <p>Pregledi dođu i odu, a telefon ćuti.</p>
+        <p class="story-brand"><em>Tu ulazimo mi,</em> <span class="story-logo">bohel<i></i></span></p>
+        <p>Smišljamo priču, pišemo scenario, montiramo i objavljujemo. Gde god da si.</p>
+        <p>Svaki video ima jedan zadatak: da ti dovede novog klijenta.</p>
+      </div>
+    </section>
+
+    <section class="solo" aria-label="Rezultati">
+      <p class="sr-only">Rezultati sa projekata na kojima smo radili: preko 1.000.000 pregleda, preko 1.500 high i mid-ticket leadova i preko 500 novih kupaca i klijenata.</p>
+      <div class="solo__stage" aria-hidden="true">
+          <div class="solo__item is-on"><b>1.000.000<i>+</i></b><span>pregleda napravljeno</span></div>
+          <div class="solo__item"><b>1.500<i>+</i></b><span>high i mid-ticket leadova</span></div>
+          <div class="solo__item"><b>500<i>+</i></b><span>novih kupaca i klijenata</span></div>
+      </div>
+      <div class="solo__dots"><button type="button" class="is-on" aria-label="Pregledi"><i></i></button><button type="button" aria-label="Leadovi"><i></i></button><button type="button" aria-label="Kupci i klijenti"><i></i></button></div>
+    </section>
+
+    <section class="services" id="usluge" aria-labelledby="h-usluge">
+      <div class="services__head">
+        <p class="eyebrow">Šta radimo</p>
+        <h2 id="h-usluge">Sve što ti treba, <em>na jednom mestu.</em></h2>
+      </div>
+
+      <div class="svc__tabs" role="tablist" aria-label="Šta radimo">
+        <button type="button" role="tab" aria-selected="true" class="is-on">Content</button>
+        <button type="button" role="tab" aria-selected="false">Leadovi</button>
+        <button type="button" role="tab" aria-selected="false">Sajt</button>
+      </div>
+      <div class="bento">
+        <article class="card card--content" id="content">
+          <div class="card__text">
+            <p class="card__tag">01 / Mesečni content</p>
+            <h3>8–12 videa svakog meseca</h3>
+            <p>Mi smišljamo šta se snima i kako se priča. Snimanje dogovaramo zajedno, uživo ili telefonom po našem scenariju.</p>
+            <ul class="pills"><li>Ideja i scenario</li><li>Scenario za snimanje</li><li>Montaža</li><li>Objava i profil</li></ul>
+          </div>
+          <div class="card__viz card__viz--split" aria-hidden="true">
+            <div class="phone-mock">
+              <div class="feed">
+                <div class="reel reel--a"><span class="reel__tag">Cena</span><b>Koliko ovo zaista košta?</b><span class="reel__cta">Komentariši CENA</span></div>
+                <div class="reel reel--b"><span class="reel__tag">Iza kulisa</span><b>Jedan dan kod nas, bez filtera</b><span class="reel__cta">Pošalji DM</span></div>
+                <div class="reel reel--c"><span class="reel__tag">Saveti</span><b>3 greške koje te koštaju klijenata</b><span class="reel__cta">Link u biou</span></div>
+                <div class="reel reel--a"><span class="reel__tag">Cena</span><b>Koliko ovo zaista košta?</b><span class="reel__cta">Komentariši CENA</span></div>
+              </div>
+              <i class="phone-mock__notch"></i>
+            </div>
+            <div class="viz" data-loop="8000">
+              <div class="screen">
+                <div class="bar"><b>Plan meseca</b><span>12 videa</span></div>
+                <div class="cal" id="cal"></div>
+                <div class="legend"><span class="s">Snimanje</span><span class="m">Montaža</span><span class="o">Objava</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card card--leads" id="leadovi">
+          <div class="card__text">
+            <p class="card__tag">02 / Pregledi i leadovi</p>
+            <h3>Pregledi koji postaju klijenti</h3>
+            <p>Stvarna publika, bez kupljenih pregleda. Svaki video vodi na komentar, DM ili link, a ti vidiš koliko je ljudi došlo.</p>
+            <p class="card__small">Plaćena promocija je opcija, budžet biraš ti.</p>
+          </div>
+          <div class="card__viz" aria-hidden="true">
+            <div class="viz" data-loop="9000">
+              <div class="screen">
+                <div class="bar"><b>Rast profila</b><span>Ilustracija</span></div>
+                <svg class="chart" viewBox="0 0 480 190">
+                  <path class="chart__grid" d="M0 48H480M0 95H480M0 142H480"/>
+                  <path class="chart__area" data-at="1600" d="M0 165C70 160 110 146 170 134S280 102 340 70 430 26 480 12V190H0Z"/>
+                  <path class="chart__views" pathLength="1" data-at="200" d="M0 165C70 160 110 146 170 134S280 102 340 70 430 26 480 12"/>
+                  <path class="chart__leads" pathLength="1" data-at="900" d="M0 184C90 180 150 172 220 158S340 132 480 84"/>
+                </svg>
+                <div class="chain"><span data-at="3400">Komentar</span><i></i><span data-at="4400">Automatski DM</span><i></i><span data-at="5400">Novi lead</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+          <article class="card card--site card--m">
+            <div class="card__text">
+              <p class="card__tag">Sajt sa zakazivanjem</p>
+              <h3>Sajt koji puni kalendar</h3>
+              <p>Gledalac dođe sa videa, vidi ponudu i sam izabere termin. Bez dopisivanja.</p>
+              <p class="card__small">Izrada sajta je 800€ jednokratno, a uz saradnju na 6 meseci je uključena u paket.</p>
+            </div>
+            <div class="card__viz" aria-hidden="true">
+              <div class="viz" data-loop="8000">
+                <div class="screen">
+                  <div class="bar"><b>Izaberi termin</b><span>Online</span></div>
+                  <div class="pick">
+                    <div class="pick__days"><span><small>pon</small>12</span><span><small>uto</small>13</span><span data-at="1000"><small>sre</small>14</span><span><small>čet</small>15</span><span><small>pet</small>16</span></div>
+                    <div class="pick__times"><span>10:00</span><span data-at="2400">11:00</span><span>12:00</span><span>14:00</span><span>15:00</span><span>16:00</span></div>
+                    <div class="pick__go" data-at="3800" data-off="4100">Potvrdi termin</div>
+                    <div class="toast" data-at="4300" data-off="7500"><i>✓</i>Termin je zakazan</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+      </div>
+    </section>
+
+    <section class="packs" id="paketi" aria-labelledby="h-packs">
+      <div class="packs__head">
+        <h2 id="h-packs">Tri paketa.<br><em>Jedan cilj.</em></h2>
+        <p>Uz saradnju na 6 meseci, sajt sa zakazivanjem vredan 800€ je uključen u svaki paket.</p>
+      </div>
+      <div class="packs__tabs" role="tablist" aria-label="Izaberi paket">
+        <button type="button" role="tab" aria-selected="false">Start</button>
+        <button type="button" role="tab" aria-selected="true" class="is-on">Rast</button>
+        <button type="button" role="tab" aria-selected="false">Pro</button>
+      </div>
+      <div class="packs__grid">
+        <article class="pack">
+          <div class="pack__top"><span class="pack__icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></svg></span><h3>Start</h3></div><p class="pack__for">Za biznis koji tek kreće sa videom.</p>
+          <p class="pack__price">400€<small>/ mesečno</small></p>
+          <a class="btn btn--soft btn--wide" href="#zakazi" data-book data-package="Start">Izaberi <svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <ul>
+            <li>8 videa mesečno</li>
+            <li>Ideja i scenario</li>
+            <li>Montaža</li>
+            <li>Objava i profil</li>
+            <li class="pack__site">Sajt sa zakazivanjem besplatno<sup>*</sup></li>
+          </ul>
+        </article>
+        <article class="pack pack--main">
+          <div class="pack__top"><span class="pack__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6 4 4 6-7M14 8h6v6"/></svg></span><h3>Rast</h3><span class="pack__badge">Naša preporuka</span></div><p class="pack__for">Za one koji žele redovne upite.</p>
+          <p class="pack__price">700€<small>/ mesečno</small></p>
+          <a class="btn btn--wide" href="#zakazi" data-book data-package="Rast">Izaberi <svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <ul>
+            <li>12 videa mesečno</li>
+            <li>Sve iz paketa Start</li>
+            <li>Lead sistem i praćenje</li>
+            <li>Automatski DM</li>
+            <li class="pack__site">Sajt sa zakazivanjem besplatno<sup>*</sup></li>
+          </ul>
+        </article>
+        <article class="pack pack--lime">
+          <div class="pack__top"><span class="pack__icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5c.7 4.6 2.4 6.3 7 7-4.6.7-6.3 2.4-7 7-.7-4.6-2.4-6.3-7-7 4.6-.7 6.3-2.4 7-7zM19 15.5c.3 2 1 2.7 3 3-2 .3-2.7 1-3 3-.3-2-1-2.7-3-3 2-.3 2.7-1 3-3z"/></svg></span><h3>Pro</h3></div><p class="pack__for">Za one koji nemaju vremena za poruke.</p>
+          <p class="pack__price">900€<small>/ mesečno</small></p>
+          <a class="btn btn--soft btn--wide" href="#zakazi" data-book data-package="Pro">Izaberi <svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <ul>
+            <li>12 videa mesečno</li>
+            <li>Sve iz paketa Rast</li>
+            <li>AI odgovori na DM</li>
+            <li>AI odgovori na komentare</li>
+            <li class="pack__site">Sajt sa zakazivanjem besplatno<sup>*</sup></li>
+          </ul>
+        </article>
+      </div>
+      <p class="packs__note"><sup>*</sup> Uz saradnju na 6 meseci, uz bilo koji paket. Inače je izrada sajta 800€ jednokratno.</p>
+    </section>
+
+    <section class="faq" id="pitanja" aria-labelledby="h-faq">
+      <div class="faq__head">
+        <h2 id="h-faq">Pitanja koja <em>svi postave.</em></h2>
+        <p>Nema tvog pitanja? Piši nam, odgovaramo istog dana.</p>
+      </div>
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary>Moram li da se pojavljujem u videima?<span class="faq__plus" aria-hidden="true"></span></summary>
+          <p>Ne moraš. Dosta videa radi i bez lica: proces rada, ruke, proizvod, prostor, rezultati. Ako želiš da budeš u kadru, scenario pišemo tako da zvučiš kao ti, bez glume.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Ko snima?<span class="faq__plus" aria-hidden="true"></span></summary>
+          <p>Snimci dolaze od tebe, telefon je sasvim dovoljan. Mi pišemo scenario, kažemo ti tačno šta da snimiš i kako, a onda sve montiramo i objavljujemo.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Koliko traje saradnja?<span class="faq__plus" aria-hidden="true"></span></summary>
+          <p>Radimo mesečno. Uz saradnju na 6 meseci dobijaš i sajt sa zakazivanjem besplatno, uz bilo koji paket.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Kada vidim prve rezultate?<span class="faq__plus" aria-hidden="true"></span></summary>
+          <p>Prvi videi izlaze u prvim nedeljama. Ozbiljniji rast obično dolazi posle dva do tri meseca redovnog objavljivanja, zato i radimo po planu, a ne na sreću.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Šta ako mi se video ne svidi?<span class="faq__plus" aria-hidden="true"></span></summary>
+          <p>Svaki video vidiš pre objave. Ako nešto ne valja, menjamo, ništa ne izlazi bez tvog „može“.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Kako izgleda prvi poziv?<span class="faq__plus" aria-hidden="true"></span></summary>
+          <p>15 minuta, bez obaveze. Pričamo o tvom biznisu, kome prodaješ i šta ti treba, pa ti kažemo koji paket ima smisla, ili da ti trenutno ne treba nijedan.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="end" id="zakazi" aria-labelledby="h-cta">
+      <div class="end__copy">
+        <h2 id="h-cta">Tvoj sledeći klijent <em>već skroluje.</em></h2>
+        <p>Javi nam se, za 15 minuta znaš šta ti treba.</p>
+        <div class="end__cta">
+          <a class="btn btn--lime btn--sweep" href="#zakazi" data-book><span class="btn__label">Zakaži poziv</span><span class="btn__box"><svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+          <a class="btn btn--line" href="#paketi">Pogledaj pakete</a>
+        </div>
+        <a class="end__quiz" href="paket.html">Ne znaš koji paket? Tri pitanja i odmah znaš <svg class="arr" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11.5M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__in">
+      <a class="foot__logo" href="#top">bohel<i></i></a>
+      <nav class="foot__links" aria-label="Linkovi u dnu">
+        <a href="#usluge">Usluge</a><a href="#paketi">Paketi</a><a href="paket.html">Koji paket ti treba?</a><a href="#zakazi" data-book>Zakaži poziv</a><a href="privatnost.html">Privatnost</a>
+      </nav>
+      <div class="foot__social">
+        <a href="https://instagram.com/bohel.rs" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span></a>
+        <a href="https://wa.me/381603031137" data-wa>WhatsApp <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="foot__bottom"><p class="foot__copy">© <span id="year">2026</span> bohel. Video koji donosi klijente. Srbija.</p><span class="foot__sig" role="img" aria-label="bohel znak"></span></div>
+    </div>
+  </footer>
+
+  <dialog class="book" id="book" aria-labelledby="book-title">
+    <form class="book__form" name="poziv" method="POST" action="https://formsubmit.co/strahinjavidosavljevic2006@gmail.com">
+      <input type="hidden" name="_subject" value="Novi zahtev za poziv sa bohel.rs">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <p class="book__hp"><label>Ne popunjavaj ovo polje: <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
+      <button type="button" class="book__x" data-close aria-label="Zatvori"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <p class="book__kicker">Besplatno · 15 minuta · Google Meet</p>
+      <h2 id="book-title">Zakaži poziv</h2>
+      <p class="book__lead">Ostavi ime i email, a mi ti šaljemo termin i link za poziv.</p>
+      <label class="field"><span>Ime</span><input name="ime" required autocomplete="name" placeholder="Kako da ti se obratimo?"></label>
+      <label class="field"><span>Email</span><input name="email" type="email" required autocomplete="email" inputmode="email" placeholder="ime@primer.rs"></label>
+      <label class="field"><span>Čime se baviš?</span><input name="biznis" autocomplete="organization" placeholder="npr. frizerski salon, ordinacija, teretana"></label>
+      <fieldset class="field seg">
+        <legend>Kada ti najviše odgovara?</legend>
+        <div class="seg__row">
+          <label><input type="radio" name="termin" value="Pre podne"><span>Pre podne</span></label>
+          <label><input type="radio" name="termin" value="Posle podne"><span>Posle podne</span></label>
+          <label><input type="radio" name="termin" value="Svejedno" checked><span>Svejedno</span></label>
+        </div>
+      </fieldset>
+      <label class="field"><span>Paket</span>
+        <select name="paket">
+          <option value="Još ne znam">Još ne znam</option>
+          <option value="Start">Start, 400€</option>
+          <option value="Rast">Rast, 700€</option>
+          <option value="Pro">Pro, 900€</option>
+        </select>
+      </label>
+      <p class="book__err" role="alert" hidden>Nešto nije prošlo. Pokušaj ponovo ili nam piši na WhatsApp.</p>
+      <button type="submit" class="btn book__send">Pošalji zahtev</button>
+      <p class="book__alt">Radije pišeš? <a href="https://wa.me/381603031137" data-wa>Javi nam se na WhatsApp</a></p>
+    </form>
+    <div class="book__done" hidden>
+      <button type="button" class="book__x" data-close aria-label="Zatvori"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <span class="book__ok" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h2>Stiglo je.</h2>
+      <p>Javljamo ti se na email sa terminom i linkom za Google Meet poziv.</p>
+      <button type="button" class="btn book__send" data-close>Važi</button>
+    </div>
+  </dialog>
+
+  <script src="main.js?v=40"></script>
+</body>
+</html>
