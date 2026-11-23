@@ -720,3 +720,18 @@
   .stage { --w: 114vw; }
   .fly--light { left: max(1.5vw, calc(var(--cx) - var(--w) * .4303)); }
 }
+
+/* Računar: megafon malo veći i malo levlje */
+@media (min-width: 761px) {
+  .fly--icons { left: max(1.5vw, calc(var(--cx) - var(--w) * .475)); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .025); width: calc(var(--w) * .125); }
+}
+/* Telefon: bez produžetka bloka, originalna slika; tekst lagano izlazi preko scene */
+@media (max-width: 760px) {
+  .shot::after { display: none; }
+  .show__gap { height: 0; }
+  .show__story { margin-top: -8vh; }
+}
+/* Telefon: dno originalnog bloka se meko gubi, bez tvrde linije i bez dodataka */
+@media (max-width: 760px) {
+  .shot .shot__img { -webkit-mask-image: linear-gradient(180deg, #000 74%, transparent 99%); mask-image: linear-gradient(180deg, #000 74%, transparent 99%); }
+}
