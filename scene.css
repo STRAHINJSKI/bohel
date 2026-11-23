@@ -706,3 +706,17 @@
   }
   .show__story { margin-top: -24vh; }
 }
+
+/* Računar: megafon, strelica i "Novi lead" spušteni da ništa ne bude isečeno ispod trake; tekst kao ranije */
+@media (min-width: 761px) {
+  .fly--icons { left: max(2vw, calc(var(--cx) - var(--w) * .44)); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .035); width: calc(var(--w) * .1); }
+  .lead-arrow { top: calc(var(--base) - var(--w) * .6667 + var(--w) * .01); }
+  .stage .note--c { top: calc(var(--base) - var(--w) * .6667 + var(--w) * .165); }
+  .show__story { margin-top: -6vh; }
+}
+
+/* Telefon: scena malo uža da ništa ne bude isečeno ivicom ekrana */
+@media (max-width: 760px) {
+  .stage { --w: 114vw; }
+  .fly--light { left: max(1.5vw, calc(var(--cx) - var(--w) * .4303)); }
+}
