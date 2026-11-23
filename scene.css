@@ -684,3 +684,4 @@
   .stage { --cx: 50vw; }
   .shot .shot__img { -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 3.5%); mask-image: linear-gradient(270deg, transparent 0, #000 3.5%); }
 }
+@media (min-width: 761px) { .shot .shot__img { -webkit-mask-image: none; mask-image: none; } }
