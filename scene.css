@@ -158,7 +158,7 @@
 .stage { --w: min(110vh, 100vw); --base: 104vh; }
 .shot { --w: inherit; }
 .slate {
-  left: calc(50vw + var(--w) * .21);
+  left: calc(var(--cx) + var(--w) * .21);
   right: auto;
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .27);
   bottom: auto;
@@ -166,7 +166,7 @@
 }
 @media (max-width: 899px) {
   .stage { --w: 114vw; --base: 103svh; }
-  .slate { left: calc(50vw + var(--w) * .06); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .3); bottom: auto; width: calc(var(--w) * .3); }
+  .slate { left: calc(var(--cx) + var(--w) * .06); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .3); bottom: auto; width: calc(var(--w) * .3); }
 }
 
 /* Mikrofon iznad "Mi pričamo" */
@@ -187,7 +187,7 @@
 /* Svetlo levo, okrenuto ka laptopu */
 .fly--light {
   position: absolute;
-  left: calc(50vw - var(--w) * .69);
+  left: calc(var(--cx) - var(--w) * .69);
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .05);
   width: calc(var(--w) * .3);
   will-change: transform;
@@ -261,7 +261,7 @@
 
 /* Zamena strana: reflektor desno (gleda ka laptopu), klapa levo */
 .fly--light {
-  left: calc(50vw + var(--w) * .38);
+  left: calc(var(--cx) + var(--w) * .38);
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .07);
   width: calc(var(--w) * .28);
 }
@@ -269,7 +269,7 @@
 .light__glow { left: auto; right: 48%; }
 .light.is-on .light__glow { background: radial-gradient(closest-side at 78% 50%, rgba(255, 205, 130, 1), rgba(255, 190, 110, .55) 45%, rgba(255, 185, 100, 0)); }
 .slate {
-  left: calc(50vw - var(--w) * .63);
+  left: calc(var(--cx) - var(--w) * .63);
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .3);
   width: calc(var(--w) * .28);
 }
@@ -283,8 +283,8 @@
 .mic { left: .43em; top: -.49em; width: 2em; }
 
 @media (max-width: 899px) {
-  .fly--light { left: calc(50vw + var(--w) * .2); width: calc(var(--w) * .28); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .02); }
-  .slate { left: calc(50vw - var(--w) * .47); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .33); width: calc(var(--w) * .28); }
+  .fly--light { left: calc(var(--cx) + var(--w) * .2); width: calc(var(--w) * .28); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .02); }
+  .slate { left: calc(var(--cx) - var(--w) * .47); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .33); width: calc(var(--w) * .28); }
   .mic { left: -1.15em; top: .5em; width: 2.5em; }
 }
 .mic { left: .2em; }
@@ -292,8 +292,8 @@
 /* Kartica "Novi lead" levo, da ne pokriva reflektor */
 .note--c { right: auto; left: 5vw; top: 28%; }
 @media (max-width: 899px) {
-  .fly--light { left: calc(50vw + var(--w) * .14); }
-  .slate { left: calc(50vw - var(--w) * .43); }
+  .fly--light { left: calc(var(--cx) + var(--w) * .14); }
+  .slate { left: calc(var(--cx) - var(--w) * .43); }
 }
 
 /* Mikrofon: štap ide do ivice ekrana, kao da ga neko drži van kadra */
@@ -314,7 +314,7 @@
 
 /* Klapa nazad desno, kao pre */
 .slate {
-  left: calc(50vw + var(--w) * .21);
+  left: calc(var(--cx) + var(--w) * .21);
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .27);
   width: calc(var(--w) * .3);
 }
@@ -322,7 +322,7 @@
 
 /* Reflektor levo: manji, stoji na levom uglu betonskog bloka i gleda u laptop */
 .fly--light {
-  left: calc(50vw - var(--w) * .53);
+  left: calc(var(--cx) - var(--w) * .53);
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .241);
   width: calc(var(--w) * .18);
 }
@@ -332,7 +332,7 @@
 
 @media (max-width: 899px) {
   .mic { --mw: 2.5em; }
-  .slate { left: calc(50vw + var(--w) * .06); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .3); width: calc(var(--w) * .3); }
+  .slate { left: calc(var(--cx) + var(--w) * .06); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .3); width: calc(var(--w) * .3); }
   .fly--light { left: 1vw; top: calc(var(--base) - var(--w) * .6667 + var(--w) * .2); width: calc(var(--w) * .22); }
 }
 
@@ -365,13 +365,13 @@
   z-index: -1;
 }
 .fly--light, .fly--light:is(*) {
-  left: calc(50vw - var(--w) * .439);
+  left: calc(var(--cx) - var(--w) * .439);
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .311);
   width: calc(var(--w) * .15);
 }
 @media (max-width: 899px) {
   .fly--light, .fly--light:is(*) {
-    left: calc(50vw - var(--w) * .439);
+    left: calc(var(--cx) - var(--w) * .439);
     top: calc(var(--base) - var(--w) * .6667 + var(--w) * .311);
     width: calc(var(--w) * .15);
   }
@@ -380,36 +380,36 @@
 /* Novi lead desno; reflektor dublje na stolu */
 .note--c { left: auto; right: 5vw; top: 20%; }
 .fly--light, .fly--light:is(*) {
-  left: calc(50vw - var(--w) * .392);
+  left: calc(var(--cx) - var(--w) * .392);
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .318);
 }
 @media (max-width: 899px) {
   .fly--light, .fly--light:is(*) {
-    left: calc(50vw - var(--w) * .392);
+    left: calc(var(--cx) - var(--w) * .392);
     top: calc(var(--base) - var(--w) * .6667 + var(--w) * .318);
   }
 }
 
 /* Reflektor još dublje na stolu, sigurno od ivice */
 .fly--light, .fly--light:is(*) {
-  left: calc(50vw - var(--w) * .309);
+  left: calc(var(--cx) - var(--w) * .309);
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .3405);
 }
 @media (max-width: 899px) {
   .fly--light, .fly--light:is(*) {
-    left: calc(50vw - var(--w) * .309);
+    left: calc(var(--cx) - var(--w) * .309);
     top: calc(var(--base) - var(--w) * .6667 + var(--w) * .3405);
   }
 }
 
 /* Reflektor u levom uglu bloka, sve tri noge na betonu */
 .fly--light, .fly--light:is(*) {
-  left: calc(50vw - var(--w) * .4303);
+  left: calc(var(--cx) - var(--w) * .4303);
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .2949);
 }
 @media (max-width: 899px) {
   .fly--light, .fly--light:is(*) {
-    left: calc(50vw - var(--w) * .4303);
+    left: calc(var(--cx) - var(--w) * .4303);
     top: calc(var(--base) - var(--w) * .6667 + var(--w) * .2949);
   }
 }
@@ -433,7 +433,7 @@
 /* Instagram i TikTok jastuci levo, odlete gore zajedno sa klapom */
 .fly--icons {
   position: absolute;
-  left: calc(50vw - var(--w) * .7);
+  left: calc(var(--cx) - var(--w) * .7);
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .08);
   width: calc(var(--w) * .29);
   will-change: transform;
@@ -453,7 +453,7 @@
 
 /* Ikonice male i diskretne, samo da popune levu stranu */
 .fly--icons {
-  left: calc(50vw - var(--w) * .64);
+  left: calc(var(--cx) - var(--w) * .64);
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .12);
   width: calc(var(--w) * .17);
 }
@@ -464,13 +464,13 @@
 
 /* Ikonice na levoj ivici poklopca laptopa, isto mesto na svakom formatu */
 .fly--icons {
-  left: max(1.5vw, calc(50vw - var(--w) * .487));
+  left: max(1.5vw, calc(var(--cx) - var(--w) * .487));
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .116);
   width: calc(var(--w) * .17);
 }
 @media (max-width: 899px) {
   .fly--icons {
-    left: max(2vw, calc(50vw - var(--w) * .487));
+    left: max(2vw, calc(var(--cx) - var(--w) * .487));
     top: calc(var(--base) - var(--w) * .6667 + var(--w) * .1);
     width: calc(var(--w) * .21);
   }
@@ -478,18 +478,18 @@
 
 /* Ikonice malo manje, gore na uglu poklopca: ne pokrivaju tekst na ekranu ni veliki bohel. */
 .fly--icons {
-  left: max(1.5vw, calc(50vw - var(--w) * .535));
+  left: max(1.5vw, calc(var(--cx) - var(--w) * .535));
   top: calc(var(--base) - var(--w) * .6667 + var(--w) * .005);
   width: calc(var(--w) * .153);
 }
 @media (max-width: 899px) {
   .fly--icons {
-    left: max(2vw, calc(50vw - var(--w) * .535));
+    left: max(2vw, calc(var(--cx) - var(--w) * .535));
     top: calc(var(--base) - var(--w) * .6667 - var(--w) * .05);
     width: calc(var(--w) * .19);
   }
 }
-.fly--icons { left: max(1.5vw, calc(50vw - var(--w) * .572)); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .0456); }
+.fly--icons { left: max(1.5vw, calc(var(--cx) - var(--w) * .572)); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .0456); }
 @media (max-width: 899px) {
   .fly--icons { top: calc(var(--base) - var(--w) * .6667 - var(--w) * .085); }
 }
@@ -498,13 +498,13 @@
 .show__word { z-index: 3; }
 .stage { z-index: 2; }
 .fly--icons {
-  left: max(1.5vw, calc(50vw - var(--w) * .4525));
+  left: max(1.5vw, calc(var(--cx) - var(--w) * .4525));
   top: calc(var(--base) - var(--w) * .6667 - var(--w) * .03);
   width: calc(var(--w) * .1);
 }
 @media (max-width: 899px) {
   .fly--icons {
-    left: max(2vw, calc(50vw - var(--w) * .4525));
+    left: max(2vw, calc(var(--cx) - var(--w) * .4525));
     top: calc(var(--base) - var(--w) * .6667 - var(--w) * .06);
     width: calc(var(--w) * .13);
   }
@@ -515,13 +515,13 @@
 
 /* Megafon umesto Instagrama, na gornjem levom uglu poklopca, okrenut ka laptopu */
 .fly--icons {
-  left: max(1.5vw, calc(50vw - var(--w) * .475));
+  left: max(1.5vw, calc(var(--cx) - var(--w) * .475));
   top: calc(var(--base) - var(--w) * .6667 - var(--w) * .045);
   width: calc(var(--w) * .125);
 }
 @media (max-width: 899px) {
   .fly--icons {
-    left: max(2vw, calc(50vw - var(--w) * .475));
+    left: max(2vw, calc(var(--cx) - var(--w) * .475));
     top: calc(var(--base) - var(--w) * .6667 - var(--w) * .08);
     width: calc(var(--w) * .16);
   }
@@ -553,15 +553,15 @@
 /* ===== Hero, treća verzija ===== */
 /* Veliki "bohel." više ne stoji na sredini; logo je nalepnica na betonskom bloku */
 .show__word { display: none; }
-.sticker { position: absolute; left: calc(50vw - var(--w) * .34); top: calc(var(--base) - var(--w) * .095); z-index: 2; display: inline-flex; align-items: baseline; padding: calc(var(--w) * .008) calc(var(--w) * .016) calc(var(--w) * .011); border-radius: calc(var(--w) * .008); background: #fbf8f1; color: #131418; font-size: calc(var(--w) * .032); font-weight: 800; letter-spacing: -.05em; line-height: 1; transform: rotate(-4deg) skewY(2deg); box-shadow: 0 1px 0 rgba(0, 0, 0, .25), 0 6px 14px rgba(0, 0, 0, .35); }
+.sticker { position: absolute; left: calc(var(--cx) - var(--w) * .34); top: calc(var(--base) - var(--w) * .095); z-index: 2; display: inline-flex; align-items: baseline; padding: calc(var(--w) * .008) calc(var(--w) * .016) calc(var(--w) * .011); border-radius: calc(var(--w) * .008); background: #fbf8f1; color: #131418; font-size: calc(var(--w) * .032); font-weight: 800; letter-spacing: -.05em; line-height: 1; transform: rotate(-4deg) skewY(2deg); box-shadow: 0 1px 0 rgba(0, 0, 0, .25), 0 6px 14px rgba(0, 0, 0, .35); }
 .sticker i { display: inline-block; width: .2em; height: .2em; margin-left: .04em; border-radius: 50%; background: #1668ad; }
 
 /* Blok se nastavlja na dole u istim tonovima, bez zelene trake ispod */
 .shot::after { content: ""; position: absolute; left: 1.2%; right: 0; top: calc(100% - 2px); height: 140vh; background: linear-gradient(90deg, #383636 0, #363434 12%, #3b3838 25%, #313030 33%, #2b2829 41%, #211e1f 46%, #242122 50%, #282526 56%, #383636 62%, #2f2c2d 68%, #333031 79%, #3e3c3b 88%, #333031 100%); -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 16%); mask-image: linear-gradient(270deg, transparent 0, #000 16%); }
 
 /* Novi lead: kartica uz laptop i plava kružna strelica koja pokazuje na nju */
-.stage .note--c { position: absolute; left: calc(50vw + var(--w) * .34); right: auto; top: calc(var(--base) - var(--w) * .6667 + var(--w) * .02); z-index: 3; }
-.lead-arrow { position: absolute; left: calc(50vw + var(--w) * .2); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .035); z-index: 3; width: calc(var(--w) * .15); height: auto; color: #1668ad; overflow: visible; pointer-events: none; }
+.stage .note--c { position: absolute; left: calc(var(--cx) + var(--w) * .34); right: auto; top: calc(var(--base) - var(--w) * .6667 + var(--w) * .02); z-index: 3; }
+.lead-arrow { position: absolute; left: calc(var(--cx) + var(--w) * .2); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .035); z-index: 3; width: calc(var(--w) * .15); height: auto; color: #1668ad; overflow: visible; pointer-events: none; }
 .lead-arrow path { fill: none; stroke: currentColor; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
 .lead-arrow .la-line { stroke-dasharray: 260; stroke-dashoffset: 260; animation: la-draw 3.6s cubic-bezier(.65, 0, .35, 1) .6s infinite; }
 .lead-arrow .la-head { opacity: 0; animation: la-head 3.6s ease .6s infinite; }
@@ -582,7 +582,7 @@
 @media (max-width: 760px) {
   .stage { --w: 124vw; --base: calc(14px + var(--w) * .66); }
   .stage .note--c { display: block !important; left: auto; right: 3vw; top: calc(var(--base) - var(--w) * .6667 - var(--w) * .1); padding: .5rem .7rem; font-size: .8125rem; }
-  .lead-arrow { left: calc(50vw + var(--w) * .1); top: calc(var(--base) - var(--w) * .6667 - var(--w) * .05); width: calc(var(--w) * .14); }
+  .lead-arrow { left: calc(var(--cx) + var(--w) * .1); top: calc(var(--base) - var(--w) * .6667 - var(--w) * .05); width: calc(var(--w) * .14); }
   .fly--icons { top: calc(var(--base) - var(--w) * .6667 - var(--w) * .04); }
 }
 
@@ -591,7 +591,7 @@
 @media (max-width: 760px) {
   .stage { --base: calc(26px + var(--w) * .72); }
   .stage .note--c { top: calc(var(--base) - var(--w) * .6667 + var(--w) * .01); }
-  .lead-arrow { left: calc(50vw + var(--w) * .06); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .03); width: calc(var(--w) * .12); }
+  .lead-arrow { left: calc(var(--cx) + var(--w) * .06); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .03); width: calc(var(--w) * .12); }
 }
 
 /* Bez svetle trake niz desnu ivicu: blok i njegov nastavak idu do kraja ekrana */
@@ -604,7 +604,7 @@
 }
 
 /* Strelica kao potez četkom: debela, zaobljena, kružno pada na "Novi lead" */
-.lead-arrow { left: calc(50vw + var(--w) * .16); top: calc(var(--base) - var(--w) * .6667 - var(--w) * .045); width: calc(var(--w) * .19); color: #1668ad; filter: drop-shadow(0 2px 3px rgba(10, 40, 90, .18)); }
+.lead-arrow { left: calc(var(--cx) + var(--w) * .16); top: calc(var(--base) - var(--w) * .6667 - var(--w) * .045); width: calc(var(--w) * .19); color: #1668ad; filter: drop-shadow(0 2px 3px rgba(10, 40, 90, .18)); }
 .lead-arrow path { stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
 .lead-arrow .la-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: la-draw2 4s cubic-bezier(.65, 0, .35, 1) .6s infinite; }
 .lead-arrow .la-head { opacity: 0; animation: la-head2 4s ease .6s infinite; }
@@ -612,7 +612,7 @@
 @keyframes la-head2 { 0%, 28% { opacity: 0; } 34%, 82% { opacity: 1; } 94%, 100% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .lead-arrow .la-line, .lead-arrow .la-head { animation: none; stroke-dashoffset: 0; opacity: 1; } }
 @media (max-width: 760px) {
-  .lead-arrow { left: calc(50vw + var(--w) * .02); top: calc(var(--base) - var(--w) * .6667 - var(--w) * .05); width: calc(var(--w) * .17); }
+  .lead-arrow { left: calc(var(--cx) + var(--w) * .02); top: calc(var(--base) - var(--w) * .6667 - var(--w) * .05); width: calc(var(--w) * .17); }
   .lead-arrow path { stroke-width: 11; }
   .mic { left: .1em; --mw: 1.7em; top: .85em; }
 }
@@ -624,7 +624,7 @@
 .lead-arrow .la-line, .lead-arrow .la-head { animation: none !important; stroke-dasharray: none; stroke-dashoffset: 0; opacity: 1; }
 .lead-arrow { color: #1a6fbd; filter: none; }
 /* Kartica tačno ispod vrha strelice */
-.stage .note--c { left: calc(50vw + var(--w) * .27); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .11); }
+.stage .note--c { left: calc(var(--cx) + var(--w) * .27); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .11); }
 
 /* Računar: laptop odmah ispod dugmadi, bez praznog prostora */
 @media (min-width: 761px) {
@@ -632,7 +632,7 @@
   .shot { bottom: auto; top: calc(var(--base) - var(--w) * .6667); }
 }
 @media (max-width: 760px) {
-  .stage .note--c { left: calc(50vw + var(--w) * .12); right: auto; top: calc(var(--base) - var(--w) * .6667 + var(--w) * .09); }
+  .stage .note--c { left: calc(var(--cx) + var(--w) * .12); right: auto; top: calc(var(--base) - var(--w) * .6667 + var(--w) * .09); }
 }
 
 /* Računar: bez tamnog nastavka bloka (pravio je crnu traku na širokim ekranima); dno bloka se meko stapa sa pozadinom */
@@ -646,8 +646,8 @@
   }
 }
 /* "Novi lead" centriran tačno ispod vrha strelice */
-.stage .note--c { left: calc(50vw + var(--w) * .2996); translate: -50% 0; }
-@media (max-width: 760px) { .stage .note--c { left: calc(50vw + var(--w) * .144); } }
+.stage .note--c { left: calc(var(--cx) + var(--w) * .2996); translate: -50% 0; }
+@media (max-width: 760px) { .stage .note--c { left: calc(var(--cx) + var(--w) * .144); } }
 
 /* Računar: blok oštar (bez fade-a), laptop stoji na mestu, a tekst odmah izlazi preko njega */
 @media (min-width: 761px) {
@@ -666,4 +666,15 @@
 }
 @media (max-width: 760px) {
   .shot::after { right: -6%; -webkit-mask-image: none; mask-image: none; background: linear-gradient(180deg, rgba(22, 104, 173, 0) 0, rgba(22, 104, 173, .5) 25%, rgba(22, 104, 173, .9) 45%, #1668ad 62%), url(img/block-ext.webp?v=1) top center / 100% auto repeat-y; }
+}
+
+/* ===== Laptop iz originalne slike, 1.3x veći; blok izlazi ispod ekrana kao kod TopOMS-a ===== */
+.stage { --cx: 50vw; }
+.shot { left: calc(var(--cx) - var(--w) / 2); margin-left: 0; }
+@media (min-width: 761px) {
+  /* slika je poravnata uz desnu ivicu ekrana, pa se nigde ne vidi kraj bloka; bez zamućenja i bez dodataka */
+  .stage { --w: min(127vh, 122vw); --cx: calc(100vw - var(--w) / 2); --base: 103vh; }
+  .shot { top: auto; bottom: -3vh; }
+  .shot .shot__img { -webkit-mask-image: none; mask-image: none; }
+  .shot::after { display: none; }
 }

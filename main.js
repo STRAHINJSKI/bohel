@@ -88,7 +88,7 @@ function initShow() {
     /* Na telefonu plava kreće čim se malo skroluje */
     const fade = innerWidth <= 760
       ? clamp((y - pinTop * 0.5) / (vh * 0.6))
-      : clamp((vh * 1.1 - story.getBoundingClientRect().top) / (vh * 0.42));
+      : clamp((vh * 0.98 - story.getBoundingClientRect().top) / (vh * 0.42));
 
     if (useDot) {
       /* Tačka iz "bohel." raste dok ne preplavi ekran plavom */
