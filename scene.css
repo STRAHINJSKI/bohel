@@ -735,3 +735,17 @@
 @media (max-width: 760px) {
   .shot .shot__img { -webkit-mask-image: linear-gradient(180deg, #000 74%, transparent 99%); mask-image: linear-gradient(180deg, #000 74%, transparent 99%); }
 }
+
+/* Telefon: jednostavno. Bez plave, bez lepljenja scene i bez animacija; tekst odmah ispod laptopa, na limeti */
+@media (max-width: 760px) {
+  .show { background: linear-gradient(180deg, #dcfa66 0, #cdf23f 50%, #c6f135 100%); }
+  .show__pin { position: relative; height: calc(56px + 82vw); }
+  .show__dim { display: none !important; }
+  .show__gap { height: 0; }
+  #slate, #flyIcons { transform: none !important; }
+  .stage .note--c { opacity: 1 !important; }
+  .show__story { margin-top: 0; padding: 1.5rem var(--gutter) 3.5rem; color: var(--ink); }
+  .show__story em { color: var(--blue); }
+  .show__story .story-logo { color: var(--ink); }
+}
+@media (max-width: 760px) { .show__story .story-logo i { background: var(--blue); } }
