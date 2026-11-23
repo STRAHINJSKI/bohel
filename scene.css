@@ -678,3 +678,9 @@
   .shot .shot__img { -webkit-mask-image: none; mask-image: none; }
   .shot::after { display: none; }
 }
+
+/* Laptop i blok na sredini ekrana (1.3x, originalna slika) */
+@media (min-width: 761px) {
+  .stage { --cx: 50vw; }
+  .shot .shot__img { -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 3.5%); mask-image: linear-gradient(270deg, transparent 0, #000 3.5%); }
+}
