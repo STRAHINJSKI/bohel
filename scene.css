@@ -618,3 +618,19 @@
 }
 .lead-arrow path { stroke-width: 13; }
 @media (max-width: 760px) { .lead-arrow path { stroke-width: 19; } }
+
+/* ===== Finalno ===== */
+/* Strelica: mirna, kao voštanom bojom, uvek pokazuje na "Novi lead" */
+.lead-arrow .la-line, .lead-arrow .la-head { animation: none !important; stroke-dasharray: none; stroke-dashoffset: 0; opacity: 1; }
+.lead-arrow { color: #1a6fbd; filter: none; }
+/* Kartica tačno ispod vrha strelice */
+.stage .note--c { left: calc(50vw + var(--w) * .27); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .11); }
+
+/* Računar: laptop odmah ispod dugmadi, bez praznog prostora */
+@media (min-width: 761px) {
+  .stage { --w: min(98vh, 94vw); --base: calc(5vh + var(--w) * .7067); }
+  .shot { bottom: auto; top: calc(var(--base) - var(--w) * .6667); }
+}
+@media (max-width: 760px) {
+  .stage .note--c { left: calc(50vw + var(--w) * .12); right: auto; top: calc(var(--base) - var(--w) * .6667 + var(--w) * .09); }
+}
