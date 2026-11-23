@@ -695,3 +695,14 @@
   .show__intro .hero__sub { margin-top: .8rem; }
   .show__intro .hero__cta { margin-top: 1.2rem; }
 }
+
+/* Računar: naslov ponovo niže (mikrofon ceo), laptop ostaje gde je; mek prelaz desnog ugla bloka; tekst kreće odmah */
+@media (min-width: 761px) {
+  .show__intro { padding-top: clamp(3.25rem, 8vh, 5rem); }
+  .stage { --w: min(146vh, 124vw); }
+  .shot .shot__img {
+    -webkit-mask-image: linear-gradient(270deg, transparent 0, rgba(0, 0, 0, .25) 2.5%, rgba(0, 0, 0, .65) 5.5%, rgba(0, 0, 0, .9) 8.5%, #000 11%);
+    mask-image: linear-gradient(270deg, transparent 0, rgba(0, 0, 0, .25) 2.5%, rgba(0, 0, 0, .65) 5.5%, rgba(0, 0, 0, .9) 8.5%, #000 11%);
+  }
+  .show__story { margin-top: -24vh; }
+}
