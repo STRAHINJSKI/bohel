@@ -72,6 +72,7 @@ function initShow() {
   const dot = $('#showWord i');
   const zoom = $('#dotZoom');
   const notes = $$('.note', show);
+  const story = $('.show__story', show);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const useDot = CONFIG.dotIntro && dot && zoom && !reduced;
   const clamp = (v) => Math.min(1, Math.max(0, v));
@@ -87,7 +88,7 @@ function initShow() {
     /* Na telefonu plava kreće čim se malo skroluje */
     const fade = innerWidth <= 760
       ? clamp((y - pinTop * 0.5) / (vh * 0.6))
-      : clamp((y + vh * 0.85 - (pinTop + vh + hold)) / (vh * 0.55));
+      : clamp((vh * 1.3 - story.getBoundingClientRect().top) / (vh * 0.5));
 
     if (useDot) {
       /* Tačka iz "bohel." raste dok ne preplavi ekran plavom */

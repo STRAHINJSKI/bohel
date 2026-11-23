@@ -550,30 +550,71 @@
   .stage { --base: calc(96px + 15vw + var(--w) * .64); }
 }
 
-/* Telefon: dno betonskog bloka se postepeno stapa sa pozadinom, bez tvrde linije */
-@media (max-width: 760px) {
-  .shot .shot__img {
-    -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 16%), linear-gradient(180deg, #000 80%, transparent 99%);
-    -webkit-mask-composite: source-in;
-    mask-image: linear-gradient(270deg, transparent 0, #000 16%), linear-gradient(180deg, #000 80%, transparent 99%);
-    mask-composite: intersect;
-  }
+/* ===== Hero, treća verzija ===== */
+/* Veliki "bohel." više ne stoji na sredini; logo je nalepnica na betonskom bloku */
+.show__word { display: none; }
+.sticker { position: absolute; left: calc(50vw - var(--w) * .34); top: calc(var(--base) - var(--w) * .095); z-index: 2; display: inline-flex; align-items: baseline; padding: calc(var(--w) * .008) calc(var(--w) * .016) calc(var(--w) * .011); border-radius: calc(var(--w) * .008); background: #fbf8f1; color: #131418; font-size: calc(var(--w) * .032); font-weight: 800; letter-spacing: -.05em; line-height: 1; transform: rotate(-4deg) skewY(2deg); box-shadow: 0 1px 0 rgba(0, 0, 0, .25), 0 6px 14px rgba(0, 0, 0, .35); }
+.sticker i { display: inline-block; width: .2em; height: .2em; margin-left: .04em; border-radius: 50%; background: #1668ad; }
+
+/* Blok se nastavlja na dole u istim tonovima, bez zelene trake ispod */
+.shot::after { content: ""; position: absolute; left: 1.2%; right: 0; top: calc(100% - 2px); height: 140vh; background: linear-gradient(90deg, #383636 0, #363434 12%, #3b3838 25%, #313030 33%, #2b2829 41%, #211e1f 46%, #242122 50%, #282526 56%, #383636 62%, #2f2c2d 68%, #333031 79%, #3e3c3b 88%, #333031 100%); -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 16%); mask-image: linear-gradient(270deg, transparent 0, #000 16%); }
+
+/* Novi lead: kartica uz laptop i plava kružna strelica koja pokazuje na nju */
+.stage .note--c { position: absolute; left: calc(50vw + var(--w) * .34); right: auto; top: calc(var(--base) - var(--w) * .6667 + var(--w) * .02); z-index: 3; }
+.lead-arrow { position: absolute; left: calc(50vw + var(--w) * .2); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .035); z-index: 3; width: calc(var(--w) * .15); height: auto; color: #1668ad; overflow: visible; pointer-events: none; }
+.lead-arrow path { fill: none; stroke: currentColor; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+.lead-arrow .la-line { stroke-dasharray: 260; stroke-dashoffset: 260; animation: la-draw 3.6s cubic-bezier(.65, 0, .35, 1) .6s infinite; }
+.lead-arrow .la-head { opacity: 0; animation: la-head 3.6s ease .6s infinite; }
+@keyframes la-draw { 0% { stroke-dashoffset: 260; } 35%, 80% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -260; } }
+@keyframes la-head { 0%, 30% { opacity: 0; } 36%, 80% { opacity: 1; } 92%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .lead-arrow .la-line, .lead-arrow .la-head { animation: none; stroke-dashoffset: 0; opacity: 1; } }
+
+/* Računar: veliki naslov sa mikrofonom, kratak tekst, veća dugmad */
+@media (min-width: 761px) {
+  .show__intro .chips-row { display: none; }
+  .show__intro .hero__sub { max-width: 34rem; margin: 1.1rem auto 0; font-size: clamp(1.0625rem, 1.25vw, 1.25rem); line-height: 1.45; color: rgba(19, 20, 24, .78); }
+  .show__intro .hero__cta { gap: .75rem; margin-top: 1.6rem; }
+  .show__intro .hero__cta .btn { min-height: 60px; padding-left: 1.9rem; padding-right: 1.9rem; font-size: 1.125rem; border-radius: .7rem; }
+  .show__intro .hero__cta .btn--sweep { padding-right: 1.6rem; }
 }
 
-/* Računar: na prvom ekranu "bohel." i laptop u prvom planu, naslov manji i na sredini iznad njih */
-@media (min-width: 761px) {
-  .show__intro { position: absolute; left: 0; right: 0; top: 0; z-index: 4; padding: 3.5vh var(--gutter) 0; pointer-events: none; }
-  .show__intro > * { pointer-events: auto; }
-  .show__intro h1 { font-size: clamp(2.5rem, min(4.6vw, 7.6vh), 5rem); }
-  .show__intro .hero__sub, .show__intro .chips-row { display: none; }
-  .show__intro .hero__cta { margin-top: 2.4vh; }
-  .mic { display: none; }
-  .show__word { top: 31vh; font-size: min(16vw, 22vh); }
-  .stage { --w: min(84vh, 92vw); --base: 104vh; }
-  .note--c { top: 44%; }
+/* Telefon: naslov, pa odmah laptop (bez velikog "bohel."), nalepnica i strelica manji */
+@media (max-width: 760px) {
+  .stage { --w: 124vw; --base: calc(14px + var(--w) * .66); }
+  .stage .note--c { display: block !important; left: auto; right: 3vw; top: calc(var(--base) - var(--w) * .6667 - var(--w) * .1); padding: .5rem .7rem; font-size: .8125rem; }
+  .lead-arrow { left: calc(50vw + var(--w) * .1); top: calc(var(--base) - var(--w) * .6667 - var(--w) * .05); width: calc(var(--w) * .14); }
+  .fly--icons { top: calc(var(--base) - var(--w) * .6667 - var(--w) * .04); }
 }
-@media (min-width: 761px) {
-  .stage { --base: 99vh; }
-  .shot { bottom: 1vh; }
-  .show__word { top: 29.5vh; }
+
+/* Blok se ispod laptopa preliva u plavu, pa se direktno nastavlja na plavi deo sa tekstom */
+.shot::after { background: linear-gradient(180deg, rgba(22, 104, 173, 0) 0, rgba(22, 104, 173, .55) 22%, rgba(22, 104, 173, .9) 42%, #1668ad 60%), linear-gradient(90deg, #383636 0, #363434 12%, #3b3838 25%, #313030 33%, #2b2829 41%, #211e1f 46%, #242122 50%, #282526 56%, #383636 62%, #2f2c2d 68%, #333031 79%, #3e3c3b 88%, #333031 100%); }
+@media (max-width: 760px) {
+  .stage { --base: calc(26px + var(--w) * .72); }
+  .stage .note--c { top: calc(var(--base) - var(--w) * .6667 + var(--w) * .01); }
+  .lead-arrow { left: calc(50vw + var(--w) * .06); top: calc(var(--base) - var(--w) * .6667 + var(--w) * .03); width: calc(var(--w) * .12); }
 }
+
+/* Bez svetle trake niz desnu ivicu: blok i njegov nastavak idu do kraja ekrana */
+.shot::after { right: -6%; -webkit-mask-image: none; mask-image: none; }
+@media (max-width: 760px) {
+  .shot .shot__img { -webkit-mask-image: none; mask-image: none; }
+  /* Mikrofon vraćen i na telefonu, uz "Mi pričamo" */
+  .mic { display: block !important; --mw: 1.55em; left: -.35em; top: .95em; }
+  .stage .note--c { display: grid !important; gap: .1rem; }
+}
+
+/* Strelica kao potez četkom: debela, zaobljena, kružno pada na "Novi lead" */
+.lead-arrow { left: calc(50vw + var(--w) * .16); top: calc(var(--base) - var(--w) * .6667 - var(--w) * .045); width: calc(var(--w) * .19); color: #1668ad; filter: drop-shadow(0 2px 3px rgba(10, 40, 90, .18)); }
+.lead-arrow path { stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+.lead-arrow .la-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: la-draw2 4s cubic-bezier(.65, 0, .35, 1) .6s infinite; }
+.lead-arrow .la-head { opacity: 0; animation: la-head2 4s ease .6s infinite; }
+@keyframes la-draw2 { 0% { stroke-dashoffset: 1; } 32%, 82% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -1; } }
+@keyframes la-head2 { 0%, 28% { opacity: 0; } 34%, 82% { opacity: 1; } 94%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .lead-arrow .la-line, .lead-arrow .la-head { animation: none; stroke-dashoffset: 0; opacity: 1; } }
+@media (max-width: 760px) {
+  .lead-arrow { left: calc(50vw + var(--w) * .02); top: calc(var(--base) - var(--w) * .6667 - var(--w) * .05); width: calc(var(--w) * .17); }
+  .lead-arrow path { stroke-width: 11; }
+  .mic { left: .1em; --mw: 1.7em; top: .85em; }
+}
+.lead-arrow path { stroke-width: 13; }
+@media (max-width: 760px) { .lead-arrow path { stroke-width: 19; } }
