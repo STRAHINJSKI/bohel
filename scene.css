@@ -634,3 +634,17 @@
 @media (max-width: 760px) {
   .stage .note--c { left: calc(50vw + var(--w) * .12); right: auto; top: calc(var(--base) - var(--w) * .6667 + var(--w) * .09); }
 }
+
+/* Računar: bez tamnog nastavka bloka (pravio je crnu traku na širokim ekranima); dno bloka se meko stapa sa pozadinom */
+@media (min-width: 761px) {
+  .shot::after { display: none; }
+  .shot .shot__img {
+    -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 16%), linear-gradient(180deg, #000 78%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(270deg, transparent 0, #000 16%), linear-gradient(180deg, #000 78%, transparent 100%);
+    mask-composite: intersect;
+  }
+}
+/* "Novi lead" centriran tačno ispod vrha strelice */
+.stage .note--c { left: calc(50vw + var(--w) * .2996); translate: -50% 0; }
+@media (max-width: 760px) { .stage .note--c { left: calc(50vw + var(--w) * .144); } }
