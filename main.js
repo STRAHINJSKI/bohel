@@ -11,6 +11,11 @@ const CONFIG = {
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const carousels = {};
+/* Koliko mesta naslov zauzima iznad scene (na računaru naslov stoji preko scene, pa je 0) */
+const introSpace = () => {
+  const intro = document.getElementById('showIntro');
+  return intro && getComputedStyle(intro).position !== 'absolute' ? intro.offsetHeight : 0;
+};
 
 /* ---------- Animirani monitori ---------- */
 function initMonitors() {
@@ -76,10 +81,13 @@ function initShow() {
     queued = false;
     const vh = innerHeight;
     const y = scrollY;
-    const pinTop = show.offsetTop + intro.offsetHeight;
+    const pinTop = show.offsetTop + introSpace();
     const hold = gap.offsetHeight;
 
-    const fade = clamp((y + vh * 0.85 - (pinTop + vh + hold)) / (vh * 0.55));
+    /* Na telefonu plava kreće čim se malo skroluje */
+    const fade = innerWidth <= 760
+      ? clamp((y - pinTop * 0.5) / (vh * 0.6))
+      : clamp((y + vh * 0.85 - (pinTop + vh + hold)) / (vh * 0.55));
 
     if (useDot) {
       /* Tačka iz "bohel." raste dok ne preplavi ekran plavom */
@@ -185,7 +193,7 @@ function initFly() {
   let queued = false;
   const draw = () => {
     queued = false;
-    const start = show.offsetTop + intro.offsetHeight + innerHeight * 0.17;
+    const start = show.offsetTop + introSpace() + innerHeight * 0.17;
     const p = clamp01((scrollY - start) / (innerHeight * 0.45));
     items.forEach(([el, delay, turn]) => {
       const t = clamp01((p - delay) / (1 - delay));

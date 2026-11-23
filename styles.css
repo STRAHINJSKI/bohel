@@ -1178,3 +1178,17 @@ html.is-locked { overflow: hidden; }
   .card--m { display: flex; }
 }
 @media (max-width: 760px) { .nav__logo { gap: 0; } }
+
+/* Telefon: vraćen stari prelaz u plavo (bez lista), a dno betonskog bloka se stapa sa limetom */
+@media (max-width: 760px) {
+  .show { background: linear-gradient(180deg, #dcfa66 0, #cdf23f 30%, #bde829 56%, #1668ad 78%, #1668ad 100%); }
+  .show__dim { display: block; }
+  .show__story { margin: 0 auto; max-width: 60rem; padding: 4vh var(--gutter) 18vh; background: none; border-radius: 0; box-shadow: none; }
+  .show__story::before { content: none; }
+  .shot__img {
+    -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 16%), linear-gradient(180deg, #000 62%, transparent 96%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(270deg, transparent 0, #000 16%), linear-gradient(180deg, #000 62%, transparent 96%);
+    mask-composite: intersect;
+  }
+}
