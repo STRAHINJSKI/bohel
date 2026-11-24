@@ -1,8 +1,8 @@
 /* Strana: koji paket ti treba */
 const PACKS = {
-  Start: { price: '400€ mesečno', items: ['8 videa mesečno', 'Ideja i scenario', 'Montaža', 'Objava i profil'] },
-  Rast: { price: '700€ mesečno', items: ['12 videa mesečno', 'Sve iz paketa Start', 'Lead sistem i praćenje', 'Automatski DM'] },
-  Pro: { price: '900€ mesečno', items: ['12 videa mesečno', 'Sve iz paketa Rast', 'AI odgovori na DM', 'AI odgovori na komentare'] },
+  Start: { price: '500€ mesečno', items: ['6–8 objava mesečno (od toga 4 videa)', 'Ideja i scenario', 'Montaža', 'Plan sadržaja za ceo mesec', 'Objava i vođenje profila'] },
+  Rast: { price: '800€ mesečno', items: ['6–8 videa mesečno', '6–8 objava mesečno', 'Creative strategist', 'Meta reklame', 'Sve iz paketa Start'] },
+  Pro: { price: '1000€ mesečno', items: ['10–12 videa mesečno', '12 objava mesečno + stories', 'Lični creative strategist', 'Nedeljni strateški sastanak', 'Analiza konkurencije svakog meseca', 'Sve iz paketa Rast'] },
 };
 
 const form = document.getElementById('quiz');
@@ -17,8 +17,8 @@ form.addEventListener('change', () => {
   if (!videos || !leads || !ai) return;
 
   let name = 'Start';
-  if (ai === 'yes') name = 'Pro';
-  else if (leads === 'yes' || videos === '12') name = 'Rast';
+  if (ai === 'yes' || videos === '12') name = 'Pro';
+  else if (leads === 'yes') name = 'Rast';
 
   const pack = PACKS[name];
   document.getElementById('quizName').textContent = name;

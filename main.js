@@ -585,7 +585,7 @@ function makeCarousel(grid, tabs, cards, start) {
 }
 function initPacks() {
   const grid = $('.packs__grid');
-  carousels.packs = makeCarousel(grid, $$('.packs__tabs button'), $$('.pack', grid), 1);
+  carousels.packs = makeCarousel(grid, $$('.packs__tabs button'), $$('.pack', grid), 2);
   const bento = $('.bento');
   carousels.svc = makeCarousel(bento, $$('.svc__tabs button'), $$('.card--content, .card--leads, .card--m', bento), 0);
 }

@@ -759,3 +759,11 @@
   .show__pin { background: #cdf23f; }
   .show__story { max-width: none; margin: 0; padding: 2.25rem var(--gutter) 3.5rem; background: var(--bg); box-shadow: inset 0 14px 18px -14px rgba(19, 20, 24, .35); }
 }
+
+/* Telefon: tekst odmah ispod laptopa na grafitu, svetlo slovo i lime naglasak (kao plavi deo na računaru) */
+@media (max-width: 760px) {
+  .show__story { background: #1b1c1f; color: #ecebe6; box-shadow: none; }
+  .show__story em { color: var(--lime); }
+  .show__story .story-logo { color: #ecebe6; }
+  .show__story .story-logo i { background: var(--lime); }
+}
