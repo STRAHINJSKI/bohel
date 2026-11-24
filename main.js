@@ -291,6 +291,30 @@ if (clapDate) {
   clapDate.textContent = `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getFullYear()).slice(2)}`;
 }
 
+/* ---------- Telefon: rečenice u priči se pale dok skroluješ ---------- */
+function initStoryReveal() {
+  const story = $('.show__story');
+  if (!story || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const phone = matchMedia('(max-width: 760px)');
+  const lines = [...story.children];
+  let queued = false;
+  const draw = () => {
+    queued = false;
+    if (!phone.matches) { lines.forEach((el) => el.style.removeProperty('--o')); return; }
+    const focus = innerHeight * 0.52;
+    const range = innerHeight * 0.42;
+    lines.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      const d = Math.abs(r.top + r.height / 2 - focus) / range;
+      el.style.setProperty('--o', Math.max(0.24, 1 - d * 0.8).toFixed(3));
+    });
+  };
+  const queue = () => { if (!queued) { queued = true; requestAnimationFrame(draw); } };
+  addEventListener('scroll', queue, { passive: true });
+  addEventListener('resize', queue);
+  draw();
+}
+
 initRotator();
 initSpy();
 initMonitors();
@@ -307,6 +331,7 @@ initBook();
 initPacks();
 initMobileMenu();
 initSheetSwipe();
+initStoryReveal();
 
 /* ---------- Kod pitanja stranica postepeno pređe u tamno ---------- */
 function initDarkFaq() {
